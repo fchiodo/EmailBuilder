@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - orchestrator
+    networks:
+      - emailbuilder
+
+  orchestrator:
+    build:
+      context: ./orchestrator
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHON_ENV=development
+      - RENDERER_URL=http://renderer:3001
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    volumes:
+      - ./orchestrator:/app
+      - ./tokens:/app/tokens:ro
+      - ./templates:/app/templates:ro
+    depends_on:
+      - renderer
+    networks:
+      - emailbuilder
+
+  renderer:
+    build:
+      context: ./renderer
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./renderer:/app
+      - /app/node_modules
+      - ./tokens:/app/tokens:ro
+    networks:
+      - emailbuilder
+
+  style-mining:
+    build:
+      context: ./style-mining
+      dockerfile: Dockerfile
+    environment:
+      - PYTHON_ENV=development
+    volumes:
+      - ./style-mining:/app
+      - ./templates:/app/templates
+      - ./tokens:/app/tokens
+    profiles:
+      - tools
+    networks:
+      - emailbuilder
+
+networks:
+  emailbuilder:
+    driver: bridge
+
+volumes:
+  node_modules_frontend:
+  node_modules_renderer:

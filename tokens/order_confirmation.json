@@ -1,0 +1,251 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$version": "1.0.0",
+  "$description": "Design Tokens per template Order Confirmation - estratti automaticamente da template storici",
+  "$extensions": {
+    "emailbuilder": {
+      "templateType": "order_confirmation",
+      "extractedFrom": ["HTML", "PDF", "Images"],
+      "lastUpdated": "2025-01-01T00:00:00Z",
+      "confidence": "high"
+    }
+  },
+  "color": {
+    "primary": {
+      "$type": "color",
+      "$value": "#2563eb",
+      "$description": "Colore primario per fiducia (order confirmation)",
+      "$extensions": {
+        "emailbuilder": {
+          "usage": ["buttons", "cta", "trust_indicators"],
+          "extractedFrom": "HTML_CSS_analysis",
+          "frequency": 0.95
+        }
+      }
+    },
+    "onPrimary": {
+      "$type": "color",
+      "$value": "#ffffff",
+      "$description": "Testo su colore primario"
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "#64748b",
+      "$description": "Colore secondario per elementi di supporto"
+    },
+    "background": {
+      "$type": "color",
+      "$value": "#f8fafc",
+      "$description": "Background principale email"
+    },
+    "surface": {
+      "$type": "color",
+      "$value": "#ffffff",
+      "$description": "Background elementi sovrapposti"
+    },
+    "text": {
+      "$type": "color",
+      "$value": "#1e293b",
+      "$description": "Testo principale"
+    },
+    "textSecondary": {
+      "$type": "color",
+      "$value": "#64748b",
+      "$description": "Testo secondario"
+    },
+    "accent": {
+      "$type": "color",
+      "$value": "#3b82f6",
+      "$description": "Colore di accento per evidenziare"
+    },
+    "info": {
+      "$type": "color",
+      "$value": "#0ea5e9",
+      "$description": "Colore per informazioni"
+    },
+    "neutral": {
+      "$type": "color",
+      "$value": "#6b7280",
+      "$description": "Colore neutro per dati"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "heading": {
+        "$type": "fontFamily",
+        "$value": ["Arial", "Helvetica", "sans-serif"],
+        "$description": "Font per titoli"
+      },
+      "body": {
+        "$type": "fontFamily",
+        "$value": ["Arial", "Helvetica", "sans-serif"],
+        "$description": "Font per corpo testo"
+      },
+      "mono": {
+        "$type": "fontFamily",
+        "$value": ["Courier", "monospace"],
+        "$description": "Font monospace per codici ordine"
+      }
+    },
+    "fontSize": {
+      "xs": {
+        "$type": "dimension",
+        "$value": "12px"
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "14px"
+      },
+      "base": {
+        "$type": "dimension",
+        "$value": "16px"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "18px"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "2xl": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "3xl": {
+        "$type": "dimension",
+        "$value": "30px"
+      }
+    },
+    "fontWeight": {
+      "normal": {
+        "$type": "fontWeight",
+        "$value": "400"
+      },
+      "medium": {
+        "$type": "fontWeight",
+        "$value": "500"
+      },
+      "semibold": {
+        "$type": "fontWeight",
+        "$value": "600"
+      },
+      "bold": {
+        "$type": "fontWeight",
+        "$value": "700"
+      }
+    },
+    "lineHeight": {
+      "tight": {
+        "$type": "number",
+        "$value": 1.2
+      },
+      "normal": {
+        "$type": "number",
+        "$value": 1.5
+      },
+      "relaxed": {
+        "$type": "number",
+        "$value": 1.6
+      }
+    }
+  },
+  "spacing": {
+    "xs": {
+      "$type": "dimension",
+      "$value": "4px"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "8px"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "24px"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "32px"
+    },
+    "2xl": {
+      "$type": "dimension",
+      "$value": "48px"
+    },
+    "3xl": {
+      "$type": "dimension",
+      "$value": "64px"
+    }
+  },
+  "radius": {
+    "none": {
+      "$type": "dimension",
+      "$value": "0px"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "4px"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "6px"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "8px"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "12px"
+    },
+    "full": {
+      "$type": "dimension",
+      "$value": "9999px"
+    }
+  },
+  "component": {
+    "button": {
+      "primary": {
+        "$type": "composite",
+        "$value": {
+          "backgroundColor": "{color.primary}",
+          "color": "{color.onPrimary}",
+          "borderRadius": "{radius.md}",
+          "padding": "{spacing.sm} {spacing.lg}",
+          "fontSize": "{typography.fontSize.base}",
+          "fontWeight": "{typography.fontWeight.semibold}"
+        },
+        "$description": "Bottone primario per tracking/info"
+      }
+    },
+    "orderNumber": {
+      "$type": "composite",
+      "$value": {
+        "fontFamily": "{typography.fontFamily.mono}",
+        "fontSize": "{typography.fontSize.lg}",
+        "fontWeight": "{typography.fontWeight.bold}",
+        "color": "{color.primary}",
+        "backgroundColor": "{color.background}",
+        "padding": "{spacing.sm} {spacing.md}",
+        "borderRadius": "{radius.sm}",
+        "border": "1px solid {color.primary}"
+      },
+      "$description": "Stile per numero ordine"
+    },
+    "table": {
+      "orderSummary": {
+        "$type": "composite",
+        "$value": {
+          "backgroundColor": "{color.surface}",
+          "border": "1px solid rgba(0, 0, 0, 0.1)",
+          "borderRadius": "{radius.lg}",
+          "padding": "{spacing.lg}"
+        },
+        "$description": "Tabella riepilogo ordine"
+      }
+    }
+  }
+}
