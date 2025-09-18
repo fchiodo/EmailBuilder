@@ -1,0 +1,11 @@
+sku,name,category,price,brand,related_skus,description,image_placeholder
+JACKET-001,Outdoor Adventure Jacket,Outerwear,199.99,Adventure Co,"BOOTS-002,BACKPACK-003",Premium waterproof jacket for all adventures,https://images.unsplash.com/photo-1551524164-6cf96ac925fb?w=300&h=300&fit=crop&q=80
+BOOTS-002,Mountain Hiking Boots,Footwear,149.99,Trail Pro,"JACKET-001,SOCKS-004",Durable boots for mountain trails,https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=300&h=300&fit=crop&q=80
+BACKPACK-003,Explorer Backpack 40L,Bags,129.99,Explorer,"JACKET-001,BOTTLE-005",Spacious backpack for multi-day adventures,https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop&q=80
+SOCKS-004,Merino Wool Hiking Socks,Accessories,24.99,Comfort,"BOOTS-002,JACKET-001",Comfortable merino wool blend socks,https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=300&h=300&fit=crop&q=80
+BOTTLE-005,Insulated Water Bottle,Accessories,39.99,Hydrate Pro,"BACKPACK-003,JACKET-001",Double-wall insulated stainless steel,https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=300&h=300&fit=crop&q=80
+TENT-006,2-Person Ultralight Tent,Camping,299.99,Shelter Co,"SLEEPING-007,MAT-008",Lightweight tent for backpacking,https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=300&h=300&fit=crop&q=80
+SLEEPING-007,Down Sleeping Bag,Camping,199.99,Sleep Well,"TENT-006,MAT-008",Premium down-filled sleeping bag,https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop&q=80
+MAT-008,Sleeping Pad,Camping,79.99,Comfort Rest,"TENT-006,SLEEPING-007",Lightweight inflatable sleeping pad,https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?w=300&h=300&fit=crop&q=80
+GLOVES-009,Winter Gloves,Accessories,49.99,Warmth Co,"JACKET-001,HAT-010",Insulated waterproof gloves,https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop&q=80
+HAT-010,Beanie Hat,Accessories,29.99,Warmth Co,"GLOVES-009,JACKET-001",Warm merino wool beanie,https://images.unsplash.com/photo-1521369909029-2afed882baee?w=300&h=300&fit=crop&q=80

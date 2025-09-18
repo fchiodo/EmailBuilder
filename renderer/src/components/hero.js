@@ -5,8 +5,22 @@
  * @returns {string} MJML component
  */
 function heroComponent(block, tokens) {
-  const { headline, subcopy, imageUrl } = block;
+  const { headline, subcopy, imageUrl, customHtml } = block;
 
+  // If custom HTML is provided, use it directly
+  if (customHtml) {
+    return `
+      <mj-section background-color="${tokens.colors.surface}" css-class="section-spacing">
+        <mj-column>
+          <mj-raw>
+            ${customHtml}
+          </mj-raw>
+        </mj-column>
+      </mj-section>
+    `.trim();
+  }
+
+  // Default hero component structure
   return `
     <mj-section background-color="${tokens.colors.surface}" css-class="section-spacing">
       <mj-column>

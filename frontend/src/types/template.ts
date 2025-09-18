@@ -4,7 +4,10 @@ export interface TemplateRequest {
   templateType: TemplateType;
   locale: string;
   skus: string[];
-  customerContext?: Record<string, any>;
+  customerContext?: Record<string, unknown>;
+  customTemplateId?: string;
+  brandGuidelineFile?: string;
+  category?: string;
 }
 
 export interface TemplateBlock {

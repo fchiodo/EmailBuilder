@@ -11,8 +11,8 @@ RUN npm ci
 # Copy source code
 COPY . .
 
-# Build the application
-RUN npm run build
+# Build the application (disable SSL verification for Google Fonts)
+RUN NODE_TLS_REJECT_UNAUTHORIZED=0 npm run build
 
 # Expose port
 EXPOSE 3000
